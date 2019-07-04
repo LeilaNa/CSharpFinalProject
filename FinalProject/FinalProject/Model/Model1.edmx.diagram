@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0791f69f04c2436ea520a8ff0489f87b" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="PersonSearchSystemModel.BloodGroup" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.EyeColor" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.Gender" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.MartialStatu" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.NAtionality" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.Person" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.Role" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.User" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__Persons__BloodGr__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__Persons__EyeColo__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__Persons__GenderI__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__Persons__Martial__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__Persons__Nationa__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__User__RoleId__68487DD7" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PersonSearchSystemModel.MilitaryStatu" Width="1.5" PointX="5.375" PointY="7.875" />
+        <AssociationConnector Association="PersonSearchSystemModel.FK__Persons__Militar__76969D2E" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

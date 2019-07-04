@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PersonSearchSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BloodGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__BloodGr__73BA3083" FromRole="BloodGroup" ToRole="Persons" />
+  </EntityType>
+  <EntityType Name="EyeColor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__EyeColo__74AE54BC" FromRole="EyeColor" ToRole="Persons" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__GenderI__72C60C4A" FromRole="Gender" ToRole="Persons" />
+  </EntityType>
+  <EntityType Name="MartialStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__Martial__75A278F5" FromRole="MartialStatus" ToRole="Persons" />
+  </EntityType>
+  <EntityType Name="NAtionality">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Persons" Relationship="Self.FK__Persons__Nationa__778AC167" FromRole="NAtionality" ToRole="Persons" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirsName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FatherName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BirthPlace" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BirtofDate" Type="DateTime" Precision="0" />
+    <Property Name="GenderId" Type="Int32" />
+    <Property Name="BloodGroupId" Type="Int32" />
+    <Property Name="EyeColorId" Type="Int32" />
+    <Property Name="MartialStatusId" Type="Int32" />
+    <Property Name="MilitaryStatusId" Type="Int32" />
+    <Property Name="NationalityId" Type="Int32" />
+    <Property Name="height" Type="Byte" />
+    <Property Name="LivingPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IssuingAuthory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BloodGroup" Relationship="Self.FK__Persons__BloodGr__73BA3083" FromRole="Persons" ToRole="BloodGroup" />
+    <NavigationProperty Name="EyeColor" Relationship="Self.FK__Persons__EyeColo__74AE54BC" FromRole="Persons" ToRole="EyeColor" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK__Persons__GenderI__72C60C4A" FromRole="Persons" ToRole="Gender" />
+    <NavigationProperty Name="MartialStatu" Relationship="Self.FK__Persons__Martial__75A278F5" FromRole="Persons" ToRole="MartialStatus" />
+    <NavigationProperty Name="NAtionality" Relationship="Self.FK__Persons__Nationa__778AC167" FromRole="Persons" ToRole="NAtionality" />
+    <NavigationProperty Name="MilitaryStatu" Relationship="PersonSearchSystemModel.FK__Persons__Militar__76969D2E" FromRole="Person" ToRole="MilitaryStatu" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__User__RoleId__68487DD7" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleId__68487DD7" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK__Persons__BloodGr__73BA3083">
+    <End Role="BloodGroup" Type="Self.BloodGroup" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BloodGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="BloodGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Persons__EyeColo__74AE54BC">
+    <End Role="EyeColor" Type="Self.EyeColor" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EyeColor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="EyeColorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Persons__GenderI__72C60C4A">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Persons__Martial__75A278F5">
+    <End Role="MartialStatus" Type="Self.MartialStatu" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MartialStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="MartialStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Persons__Nationa__778AC167">
+    <End Role="NAtionality" Type="Self.NAtionality" Multiplicity="0..1" />
+    <End Role="Persons" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAtionality">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persons">
+        <PropertyRef Name="NationalityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleId__68487DD7">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PersonSearchSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BloodGroups" EntityType="Self.BloodGroup" />
+    <EntitySet Name="EyeColors" EntityType="Self.EyeColor" />
+    <EntitySet Name="Genders" EntityType="Self.Gender" />
+    <EntitySet Name="MartialStatus" EntityType="Self.MartialStatu" />
+    <EntitySet Name="NAtionalities" EntityType="Self.NAtionality" />
+    <EntitySet Name="Persons" EntityType="Self.Person" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Persons__BloodGr__73BA3083" Association="Self.FK__Persons__BloodGr__73BA3083">
+      <End Role="BloodGroup" EntitySet="BloodGroups" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Persons__EyeColo__74AE54BC" Association="Self.FK__Persons__EyeColo__74AE54BC">
+      <End Role="EyeColor" EntitySet="EyeColors" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Persons__GenderI__72C60C4A" Association="Self.FK__Persons__GenderI__72C60C4A">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Persons__Martial__75A278F5" Association="Self.FK__Persons__Martial__75A278F5">
+      <End Role="MartialStatus" EntitySet="MartialStatus" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Persons__Nationa__778AC167" Association="Self.FK__Persons__Nationa__778AC167">
+      <End Role="NAtionality" EntitySet="NAtionalities" />
+      <End Role="Persons" EntitySet="Persons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleId__68487DD7" Association="Self.FK__User__RoleId__68487DD7">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="MilitaryStatus" EntityType="PersonSearchSystemModel.MilitaryStatu" />
+    <AssociationSet Name="FK__Persons__Militar__76969D2E" Association="PersonSearchSystemModel.FK__Persons__Militar__76969D2E">
+      <End Role="MilitaryStatu" EntitySet="MilitaryStatus" />
+      <End Role="Person" EntitySet="Persons" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MilitaryStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="deletedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Persons" Relationship="PersonSearchSystemModel.FK__Persons__Militar__76969D2E" FromRole="MilitaryStatu" ToRole="Person" />
+  </EntityType>
+  <Association Name="FK__Persons__Militar__76969D2E">
+    <End Type="PersonSearchSystemModel.MilitaryStatu" Role="MilitaryStatu" Multiplicity="0..1" />
+    <End Type="PersonSearchSystemModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryStatu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="MilitaryStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
